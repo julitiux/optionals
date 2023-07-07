@@ -17,4 +17,13 @@ class OptionalObjectsSpec extends Specification {
     response.isEmpty()
   }
 
+  def "throw error on create"() {
+    given:
+    Optional<String> response
+    when:
+    response = instance.throwErrorOnCreate()
+    then:
+    thrown(NullPointerException)
+  }
+
 }
