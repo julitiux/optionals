@@ -23,7 +23,13 @@ public class OptionalObjects {
 
   public Optional<String> createNullable() {
     String string = "optional";
-    Optional optional = Optional.ofNullable(string);
+    Optional<String> optional = Optional.ofNullable(string);
+    return optional;
+  }
+
+  public Optional<String> createNullableWithNull() {
+    String string = null;
+    Optional<String> optional = Optional.ofNullable(string);
     return optional;
   }
 
