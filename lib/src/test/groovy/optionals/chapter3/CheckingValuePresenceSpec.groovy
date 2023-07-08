@@ -26,4 +26,13 @@ class CheckingValuePresenceSpec extends Specification {
     !response
   }
 
+  def "when is empty with a value"() {
+    given:
+    boolean response
+    when:
+    response = instance.whenIsEmptyWithAValue()
+    then:
+    !response
+  }
+
 }
