@@ -14,5 +14,10 @@ public class CheckingValuePresence {
     return optional.isPresent();
   }
 
+  public boolean whenIsEmptyWithAValue() {
+    Optional<String> optional = Optional.of("string");
+    return optional.isEmpty();
+  }
+
 }
 
