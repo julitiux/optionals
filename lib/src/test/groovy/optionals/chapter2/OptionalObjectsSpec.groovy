@@ -17,6 +17,15 @@ class OptionalObjectsSpec extends Specification {
     response.isEmpty()
   }
 
+  def "create non nullable"() {
+    given:
+    Optional<String> response
+    when:
+    response = instance.createNonNullable()
+    then:
+    response.present
+  }
+
   def "throw error on create"() {
     given:
     Optional<String> response
