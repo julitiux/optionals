@@ -17,4 +17,13 @@ class CheckingValuePresenceSpec extends Specification {
     response
   }
 
+  def "when is present with a null"() {
+    given:
+    boolean response
+    when:
+    response = instance.whenIsPresentWithANull()
+    then:
+    !response
+  }
+
 }
