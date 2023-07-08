@@ -12,7 +12,7 @@ class CheckingValuePresenceSpec extends Specification {
     given:
     boolean response
     when:
-    response = instance.whenIsPresent()
+    response = instance.whenIsPresentWithAValue()
     then:
     response
   }
