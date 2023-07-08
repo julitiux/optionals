@@ -19,5 +19,11 @@ public class CheckingValuePresence {
     return optional.isEmpty();
   }
 
+  public boolean whenIsEmptyWithANull() {
+    Optional<String> optional = Optional.ofNullable(null);
+    return optional.isEmpty();
+
+  }
+
 }
 
