@@ -9,6 +9,12 @@ public class OptionalObjects {
     return empty;
   }
 
+  public Optional<String> createNonNullable() {
+    String string = "optional";
+    Optional optional = Optional.of(string);
+    return optional;
+  }
+
   public Optional<String> throwErrorOnCreate() {
     String string = null;
     Optional<String> optionalNull = Optional.of(string);
