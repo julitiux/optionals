@@ -20,4 +20,18 @@ class TransformingValuesWithMapSpec extends Specification {
     []                                                 | 0
   }
 
+  def "map Work With Filter"() {
+    when:
+    boolean response = instance.mapWorkWithFilter(_password, _correctPassword)
+    then:
+    response == _response
+    where:
+    _password      | _correctPassword | _response
+    "password"     | "password"       | true
+    "  password  " | "password"       | true
+    null           | "password"       | false
+    "noPsassword"  | "password"       | false
+    ""             | "password"       | false
+  }
+
 }
