@@ -13,4 +13,9 @@ class DifferenceBetweenOrElseandElseGetSpec extends Specification {
     instance.orElseGet()
   }
 
+  def "using orElse"() {
+    expect:
+    instance.orElse()
+  }
+
 }
