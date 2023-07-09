@@ -10,4 +10,11 @@ public class TransformingValuesWithMap {
     return optionalList.map(List::size).orElse(0);
   }
 
+  public boolean mapWorkWithFilter(String password, String correctPassword) {
+    return Optional.ofNullable(password)
+      .map(String::trim)
+      .filter(pass -> pass.equals(correctPassword))
+      .isPresent();
+  }
+
 }
