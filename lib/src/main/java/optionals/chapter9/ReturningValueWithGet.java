@@ -8,4 +8,9 @@ public class ReturningValueWithGet {
     return Optional.of("string");
   }
 
+  public String notGetValue() {
+    Optional<String> optional=  Optional.ofNullable(null);
+    return optional.get();
+  }
+
 }
