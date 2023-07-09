@@ -10,9 +10,14 @@ class TransformingValuesWithMapSpec extends Specification {
 
   def "map Works Count Elements Of List"() {
     when:
-    Integer response = instance.mapWorksCountElementsOfList()
+    Integer response = instance.mapWorksCountElementsOfList(_list)
     then:
-    response == 6
+    response == _response
+    where:
+    _list                                              | _response
+    ["paypal", "oracle", "", "microsoft", "", "apple"] | 6
+    ["", "", "apple"]                                  | 3
+    []                                                 | 0
   }
 
 }
