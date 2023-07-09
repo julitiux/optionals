@@ -15,4 +15,12 @@ class ReturningValueWithGetSpec extends Specification {
     response.get().equals('string')
     response.isPresent()
   }
+
+
+  def "not Get Value"() {
+    when:
+    String response = instance.notGetValue()
+    then:
+    thrown(NoSuchElementException)
+  }
 }
