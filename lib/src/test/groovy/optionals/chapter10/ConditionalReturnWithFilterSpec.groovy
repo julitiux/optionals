@@ -14,4 +14,11 @@ class ConditionalReturnWithFilterSpec extends Specification {
     then:
     response
   }
+
+  def "optional Filter NOT Works"() {
+    when:
+    def response = instance.optionalFilterNotWorks()
+    then:
+    !response
+  }
 }
