@@ -19,10 +19,18 @@ public class ConditionalReturnWithFilter {
   public boolean priceIsInRange(Modem modem) {
     boolean isInRange = false;
 
-    if (modem != null && modem.getPrice() != null && (modem.getPrice() >= 10 && modem.getPrice() <= 15)){
+    if (modem != null && modem.getPrice() != null && (modem.getPrice() >= 10 && modem.getPrice() <= 15)) {
       isInRange = true;
     }
     return isInRange;
+  }
+
+  public boolean priceIsInRangeWithOptional(Modem modem) {
+    return Optional.ofNullable(modem)
+      .map(Modem::getPrice)
+      .filter(price -> price >= 10)
+      .filter(price -> price <= 15)
+      .isPresent();
   }
 
 }
