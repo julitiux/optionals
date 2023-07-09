@@ -14,4 +14,11 @@ class ExceptionsWithOrElseThrowSpec extends Specification {
     then:
     thrown(NullPointerException)
   }
+
+  def "orElseThrow Simple"() {
+    when:
+    instance.orElseThrowSimple()
+    then:
+    thrown(NoSuchElementException)
+  }
 }
