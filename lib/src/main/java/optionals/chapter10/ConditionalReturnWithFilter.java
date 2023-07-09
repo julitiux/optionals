@@ -10,4 +10,10 @@ public class ConditionalReturnWithFilter {
     return yearOptional.filter(y -> y == 2018).isPresent();
   }
 
+  public boolean optionalFilterNotWorks() {
+    Integer year = 2022;
+    Optional<Integer> yearOptional = Optional.of(year);
+    return yearOptional.filter(y -> y == 2018).isPresent();
+  }
+
 }
