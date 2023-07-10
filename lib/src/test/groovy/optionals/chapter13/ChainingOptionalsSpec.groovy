@@ -27,4 +27,13 @@ class ChainingOptionalsSpec extends Specification {
     _response << instance.getHello()
   }
 
+  def "chaining First Non Empty Is Return If Has A One Argument"() {
+    when:
+    def response = instance.chainingFirstNonEmptyIsReturnIfHasAOneArgument()
+    then:
+    response == _response
+    where:
+    _response << instance.createOptional("hello")
+  }
+
 }
