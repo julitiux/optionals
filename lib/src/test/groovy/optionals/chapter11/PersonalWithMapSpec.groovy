@@ -17,4 +17,15 @@ class PersonalWithMapSpec extends Specification {
     _Person                                           | _response
     Optional.of(new Person("Julito", 10, "password")) | "Julito"
   }
+
+
+  def "when FlatMap Is Here"() {
+    when:
+    String response = instance.whenFlatMapIsHere(_Person)
+    then:
+    response == _response
+    where:
+    _Person                                           | _response
+    Optional.of(new Person("Julito", 10, "password")) | "Julito"
+  }
 }
