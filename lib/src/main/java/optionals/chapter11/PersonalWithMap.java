@@ -10,4 +10,10 @@ public class PersonalWithMap {
     return nameOptional.orElse("");
   }
 
+  public String whenFlatMapIsHere(Optional<Person> optionalPerson) {
+    return optionalPerson
+      .flatMap(Person::getName)
+      .orElse("");
+  }
+
 }
