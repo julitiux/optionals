@@ -40,4 +40,15 @@ public class ChainingOptionals {
       .findFirst();
   }
 
+  public Optional<String> chainingFirstNonEmptyIsReturnIfHasAOneArgument() {
+    return Stream.<Supplier<Optional<String>>>of(
+        () -> createOptional("empty"),
+        () -> createOptional("hello")
+      )
+      .map(Supplier::get)
+      .filter(Optional::isPresent)
+      .map(Optional::get)
+      .findFirst();
+  }
+
 }
