@@ -8,6 +8,12 @@ public class Person {
   int age;
   String password;
 
+  public Person(String name, int age, String password) {
+    this.name = name;
+    this.age = age;
+    this.password = password;
+  }
+
   public Optional<String> getName() {
     return Optional.ofNullable(name);
   }
@@ -23,9 +29,11 @@ public class Person {
   public void setName(String name) {
     this.name = name;
   }
+
   public void setAge(int age) {
     this.age = age;
   }
+
   public void setPassword(String password) {
     this.password = password;
   }
