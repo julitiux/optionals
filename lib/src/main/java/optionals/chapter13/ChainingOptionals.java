@@ -1,6 +1,7 @@
 package optionals.chapter13;
 
 import java.util.Optional;
+import java.util.function.Supplier;
 import java.util.stream.Stream;
 
 public class ChainingOptionals {
@@ -25,6 +26,15 @@ public class ChainingOptionals {
 
   public Optional<String> chainingFirstNonEmptyIsReturned() {
     return Stream.of(getEmpty(), getHello(), getBye())
+      .filter(Optional::isPresent)
+      .map(Optional::get)
+      .findFirst();
+  }
+
+
+  public Optional<String> chainingFirstNotEmptyIsReturnedAndRestNotEvaluated() {
+    return Stream.<Supplier<Optional<String>>>of(this::getEmpty, this::getHello, this::getBye)
+      .map(Supplier::get)
       .filter(Optional::isPresent)
       .map(Optional::get)
       .findFirst();
