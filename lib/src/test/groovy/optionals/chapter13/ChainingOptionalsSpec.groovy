@@ -36,4 +36,11 @@ class ChainingOptionalsSpec extends Specification {
     _response << instance.createOptional("hello")
   }
 
+  def "chaining Default Is Returned"() {
+    when:
+    String response = instance.chainingDefaultIsReturned()
+    then:
+    response.equals("default")
+  }
+
 }
