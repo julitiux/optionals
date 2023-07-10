@@ -51,4 +51,16 @@ public class ChainingOptionals {
       .findFirst();
   }
 
+  public String chainingDefaultIsReturned() {
+    return Stream.<Supplier<Optional<String>>>of(
+        () -> createOptional("empty"),
+        () -> createOptional("empty")
+      )
+      .map(Supplier::get)
+      .filter(Optional::isPresent)
+      .map(Optional::get)
+      .findFirst()
+      .orElseGet(() -> "default");
+  }
+
 }
