@@ -18,4 +18,13 @@ class ChainingOptionalsSpec extends Specification {
     _response << instance.getHello()
   }
 
+  def "chaining First Not Empty Is Returned And Rest Not Evaluated"() {
+    when:
+    def response = instance.chainingFirstNotEmptyIsReturnedAndRestNotEvaluated()
+    then:
+    response == _response
+    where:
+    _response << instance.getHello()
+  }
+
 }
